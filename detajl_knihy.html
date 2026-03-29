@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cruel Prince - Detail knihy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+        <header>
+    <div class="top-bar">
+        <div class="logo-placeholder"></div>
+        
+        <div class="header-icons">
+            <a href="account.html" class="icon-circle" title="Môj účet"></a>
+            
+            <a class="icon-book" href="hlavna_stranka.html">
+                <i class="fas fa-book-open"></i>
+            </a>
+
+            <div class="cart-wrapper">
+                <a class="icon-cart" href="kosik.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <!-- Len JEDEN cart-menu -->
+                <div class="cart-menu">
+                    <div class="triangle"></div>
+                    
+                    <div class="cart-items">
+                        <div class="book-in-cart">
+                            <div class="book-img"></div>
+                            
+                            <div class="book-info">
+                                <span class="title">Názov knihy</span>
+                                <span class="author">Autor</span>
+                                <span class="status">Predobjednávka</span>
+                            </div>
+                            
+                            <div class="book-controls">
+                                <span class="remove">&times;</span>
+                                <div class="quantity">
+                                    <button>-</button>
+                                    <span>1</span>
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-section">
+                        <i class="fas fa-truck"></i>
+                        <div class="progress-bar">
+                            <div class="fill"></div>
+                        </div>
+                        <span class="total-price">49,00€</span>
+                    </div>
+
+                    <button class="btn-checkout">Dokončiť objednávku</button>
+                </div> 
+            </div> 
+        </div> 
+    </div>
+
+    <!-- Opravený search - chýbal uzatvárajúci form tag -->
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            
+            <form action="/vyhladavanie" method="GET">
+                <input type="text" placeholder="Hľadať..." aria-label="Hľadať na stránke" name="q">
+                <button type="submit" style="display: none;"></button>
+            </form>
+            
+            <div class="burger-wrapper">
+                <i class="fas fa-bars"></i>
+                
+                <div class="mega-menu">
+                    <div class="triangle"></div>
+                    <div class="menu-grid">
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#">detektívky, trilery, horory</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                            <h4 class="second-row">Odborná</h4>
+                            <ul>
+                                <li><a href="#">História</a></li>
+                                <li><a href="#">Motivačná literatúra</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="detail-page">
+        <div class="container">
+            
+            <!-- Book Header Section -->
+            <section class="book-header">
+                <div class="book-main-info">
+                    <h1 class="book-title-detail">The Cruel Prince</h1>
+                    <p class="book-author">Holly Black</p>
+                    <span class="tag-new">Novinka</span>
+                </div>
+            </section>
+
+            <!-- Book Detail Section -->
+            <section class="book-detail-section">
+                <div class="book-layout">
+                    <!-- Left: Book Cover -->
+                    <div class="book-cover-large">
+                        <img src="https://mrtns.sk/tovar/_l/3130/l3130291.jpg?v=17732068252" alt="The Cruel Prince">
+                    </div>
+
+                    <!-- Right: Book Info -->
+                    <div class="book-info-panel">
+                        <!-- Rating -->
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+                        <!-- Book Meta -->
+                        <div class="book-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">1. diel série</span>
+                                <span class="meta-value">Férska sága</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">vydavateľstvo</span>
+                                <span class="meta-value">Slovart, 2022</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">400 strán</span>
+                                <span class="meta-value">7-8 hodín čítania</span>
+                            </div>
+                        </div>
+
+                        <!-- Price & Buy Box -->
+                        <div class="buy-box">
+                            <div class="price-section">
+                                <span class="current-price">14,90 €</span>
+                                <span class="old-price">16,90 €</span>
+                            </div>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i> Vložiť do košíka
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Description -->
+            <section class="book-description">
+                <h3>Obsah:</h3>
+                <p>One terrible morning, Jude and her sisters see their parents murdered in front of them. The terrifying assassin abducts all three girls to the world of Faerie, where Jude is installed in the royal court but mocked and tormented by the Faerie royalty for being mortal. As Jude grows older, she realises that she will need to take part in the dangerous deceptions of the fey to ever truly belong. But the stairway to power is fraught with shadows and betrayal. And looming over all is the infuriating, arrogant and charismatic Prince Cardan.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Editions Section (Purple Background) -->
+    <section class="editions-section">
+        <div class="container">
+            <h3>Iné vydania:</h3>
+            <div class="editions-grid">
+                <div class="edition-card">
+                    <span class="edition-lang">Slovenčina</span>
+                    <span class="edition-type">pevná väzba</span>
+                    <div class="edition-cover">
+                        <img src="" alt="Krutý princ">
+                    </div>
+                    <button class="edition-price add-to-cart-btn">
+                        22,00 € <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+
+                <div class="edition-card">
+                    <span class="edition-lang">Angličtina</span>
+                    <span class="edition-type">mäkká väzba</span>
+                    <div class="edition-cover">
+                        <img src="https://mrtns.sk/tovar/_l/437/l437793.jpg?v=17732068382" alt="The Cruel Prince">
+                    </div>
+                    <button class="edition-price add-to-cart-btn">
+                        12,90 € <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+
+                <div class="edition-card">
+                    <span class="edition-lang">Slovenčina</span>
+                    <span class="edition-type">brožovaná väzba</span>
+                    <div class="edition-cover">
+                        <img src="https://mrtns.sk/tovar/_l/306/l306328.jpg?v=17730787822" alt="Krutý princ">
+                    </div>
+                    <button class="edition-price add-to-cart-btn">
+                        12,90 € <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+
+                <div class="edition-card sold-out">
+                    <span class="edition-lang">Čeština</span>
+                    <span class="edition-type">pevná väzba</span>
+                    <div class="edition-cover">
+                        <img src="https://mrtns.sk/tovar/_l/2602/l2602429.jpg?v=17732068272" alt="Krutý princ">
+                    </div>
+                    <div class="edition-price sold-out-tag">
+                        Vypredané
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations">
+        <div class="container">
+            <h3>Tiež by sa vám mohlo páčiť:</h3>
+            <div class="rec-slider">
+                <button class="rec-arrow left"><i class="fas fa-arrow-left"></i></button>
+                <div class="rec-books">
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                </div>
+                <button class="rec-arrow right"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h3>Hodnotenie:</h3>
+            
+            <div class="rating-summary">
+                <div class="rating-big">
+                    <span class="rating-number">4,3</span>
+                    <span class="rating-total">/ 5</span>
+                </div>
+                
+                <div class="rating-breakdown">
+                    <div class="rating-row">
+                        <span class="count">297</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i> 
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="count">122</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="count">54</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="count">10</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="rating-row">
+                        <span class="count">17</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="reviews-title">Recenzie:</h3>
+            
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">Čítanie tejto série som dlho odkladala, lebo som na ňu na zahraničnom webe videla samé zlé recenzie... a napriek tomu, že nie som v knihách fanúšikom ropúch na ktorých sa dá jazdiť, či prílišného množstva kdejakých čudných bytostí, túto sériu som milovala od začiatku do konca! Určite odporúčam :-) je to zaujímavé a napínavé. Romantika je okrajová, čo je za mňa ok, a postavy som si zamilovala.</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="review-text">Táto úžasná kniha si ma získala už prvými stranami. Je to jedna z najlepších kníh čo som čítala. Veľmi ju odporúčam.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer></footer>
+
+</body>
+</html>

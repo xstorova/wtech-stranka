@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kníhkupectvo - Domov</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="top-bar">
+        <div class="logo-placeholder"></div>
+        
+        <div class="header-icons">
+            <a href="account.html" class="icon-circle" title="Môj účet"></a>
+            
+            <a class="icon-book" href="hlavna_stranka.html">
+                <i class="fas fa-book-open"></i>
+            </a>
+
+            <div class="cart-wrapper">
+                <a class="icon-cart" href="kosik.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <!-- Len JEDEN cart-menu -->
+                <div class="cart-menu">
+                    <div class="triangle"></div>
+                    
+                    <div class="cart-items">
+                        <div class="book-in-cart">
+                            <div class="book-img"></div>
+                            
+                            <div class="book-info">
+                                <span class="title">Názov knihy</span>
+                                <span class="author">Autor</span>
+                                <span class="status">Predobjednávka</span>
+                            </div>
+                            
+                            <div class="book-controls">
+                                <span class="remove">&times;</span>
+                                <div class="quantity">
+                                    <button>-</button>
+                                    <span>1</span>
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-section">
+                        <i class="fas fa-truck"></i>
+                        <div class="progress-bar">
+                            <div class="fill"></div>
+                        </div>
+                        <span class="total-price">49,00€</span>
+                    </div>
+
+                    <button class="btn-checkout">Dokončiť objednávku</button>
+                </div> 
+            </div> 
+        </div> 
+    </div>
+
+    <!-- Opravený search - chýbal uzatvárajúci form tag -->
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            
+            <form action="/vyhladavanie" method="GET">
+                <input type="text" placeholder="Hľadať..." aria-label="Hľadať na stránke" name="q">
+                <button type="submit" style="display: none;"></button>
+            </form>
+            
+            <div class="burger-wrapper">
+                <i class="fas fa-bars"></i>
+                
+                <div class="mega-menu">
+                    <div class="triangle"></div>
+                    <div class="menu-grid">
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#">detektívky, trilery, horory</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                            <h4 class="second-row">Odborná</h4>
+                            <ul>
+                                <li><a href="#">História</a></li>
+                                <li><a href="#">Motivačná literatúra</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="news-section">
+            <h2>Novinky</h2>
+            <div class="slider-container">
+                <div class="side-slide"></div>
+                <div class="main-slide">
+                    <button class="arrow left">←</button>
+                    <button class="arrow right">→</button>
+                </div>
+                <div class="side-slide"></div>
+            </div>
+            <div class="dots">
+                <span></span><span></span><span class="active"></span><span></span><span></span>
+            </div>
+        </section>
+
+        <!-- Sekcia filtrov a zoradenia -->
+        <section class="filters-section">
+            <div class="filters-container">
+                
+                <!-- Zoradenie -->
+                <div class="sort-box">
+                    <label for="sort-select"><i class="fas fa-sort"></i> Zoradiť podľa:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="" selected>Vyberte...</option>
+                        <optgroup label="Cena">
+                            <option value="price-asc">Cena: od najnižšej</option>
+                            <option value="price-desc">Cena: od najvyššej</option>
+                        </optgroup>
+                        <optgroup label="Názov">
+                            <option value="name-asc">Názov: A-Z</option>
+                            <option value="name-desc">Názov: Z-A</option>
+                        </optgroup>
+                        <optgroup label="Farba">
+                            <option value="color-red">Červená</option>
+                            <option value="color-blue">Modrá</option>
+                            <option value="color-green">Zelená</option>
+                            <option value="color-black">Čierna</option>
+                            <option value="color-white">Biela</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Rýchle filtre (voliteľné, ale pekné) -->
+                <div class="quick-filters">
+                    <span class="filter-label">Rýchle filtre:</span>
+                    <button class="filter-chip" data-filter="new">Novinky</button>
+                    <button class="filter-chip" data-filter="sale">Zľavy</button>
+                    <button class="filter-chip" data-filter="bestseller">Najpredávanejšie</button>
+                </div>
+
+                <!-- Zobrazenie počtu výsledkov -->
+                <div class="results-count">
+                    Zobrazených <strong>12</strong> produktov
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="best-sellers">
+            <h2>Najpredávanejšie</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder">
+                        <img src="https://mrtns.sk/tovar/_l/437/l437793.jpg?v=17737255312" alt="The Cruel Prince">
+                    </div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="detajl_knihy.html">The Cruel Princ</a></h3>
+                        <a href="autor.html" class="writer">Holly Black</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">  
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                    <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                    <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                      <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                       <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="product-grid">
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="book-cover-placeholder"></div>
+                    <div class="product-info">
+                        <h3> <a class="name-of-the-book" href="#">Názov knihy</a></h3>
+                        <a href="#" class="writer">Autor</a>
+                        <p>Niečo o knihe</p>
+                        <a href="#" class="button-placeholder">Kúpiť</a>
+                    </div>
+                </div>
+            </section>
+        
+            <div class="pagination">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>...</span>
+                <span>10</span>
+            </div>
+        </main>
+    <footer></footer>
+
+</body>
+</html>
+
