@@ -1,0 +1,281 @@
+
+
+
+<!-- neprepisane --->
+
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holly Black - Autor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+        <header>
+    <div class="top-bar">
+        <div class="logo-placeholder"></div>
+        
+        <div class="header-icons">
+            <a href="account.html" class="icon-circle" title="Môj účet"></a>
+            
+            <a class="icon-book" href="hlavna_stranka.html">
+                <i class="fas fa-book-open"></i>
+            </a>
+
+            <div class="cart-wrapper">
+                <a class="icon-cart" href="kosik.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <!-- Len JEDEN cart-menu -->
+                <div class="cart-menu">
+                    <div class="triangle"></div>
+                    
+                    <div class="cart-items">
+                        <div class="book-in-cart">
+                            <div class="book-img"></div>
+                            
+                            <div class="book-info">
+                                <span class="title">Názov knihy</span>
+                                <span class="author">Autor</span>
+                                <span class="status">Predobjednávka</span>
+                            </div>
+                            
+                            <div class="book-controls">
+                                <span class="remove">&times;</span>
+                                <div class="quantity">
+                                    <button>-</button>
+                                    <span>1</span>
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-section">
+                        <i class="fas fa-truck"></i>
+                        <div class="progress-bar">
+                            <div class="fill"></div>
+                        </div>
+                        <span class="total-price">49,00€</span>
+                    </div>
+
+                    <button class="btn-checkout">Dokončiť objednávku</button>
+                </div> 
+            </div> 
+        </div> 
+    </div>
+
+    <!-- Opravený search - chýbal uzatvárajúci form tag -->
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            
+            <form action="/vyhladavanie" method="GET">
+                <input type="text" placeholder="Hľadať..." aria-label="Hľadať na stránke" name="q">
+                <button type="submit" style="display: none;"></button>
+            </form>
+            
+            <div class="burger-wrapper">
+                <i class="fas fa-bars"></i>
+                
+                <div class="mega-menu">
+                    <div class="triangle"></div>
+                    <div class="menu-grid">
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#">detektívky, trilery, horory</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                            <h4 class="second-row">Odborná</h4>
+                            <ul>
+                                <li><a href="#">História</a></li>
+                                <li><a href="#">Motivačná literatúra</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#">slovenská beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-column">
+                            <h4>Beletria</h4>
+                            <ul>
+                                <li><a href="#">svetová beletria</a></li>
+                                <li><a href="#" class="more">viac</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="author-page">
+        <div class="container">
+            
+            <!-- Author Card -->
+            <section class="author-profile-section">
+                <div class="author-profile-container">
+                    
+                    <div class="author-main-content">
+                        <div class="author-book-style-photo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Holly_Black_Author_Photo_2020.jpg/500px-Holly_Black_Author_Photo_2020.jpg" alt="Holly Black">
+                        </div>
+
+                        <div class="author-text-details">
+                            <span class="author-label">AUTOR</span>
+                            <h1 class="author-full-name">Holly Black</h1>
+                            <div class="author-bio-short">
+                                <p>Holly Black is the #1 New York Times bestselling author of fantasy books, including the novels of Elfhame, The Coldest Girl in Coldtown, and The Spiderwick Chronicles. Her books have been translated into thirty-two languages worldwide and adapted for film.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="author-status-bar">
+                        <div class="status-item">
+                            <span class="status-label">STAV</span>
+                            <span class="status-value active"><i class="fas fa-circle"></i> Stále aktívny autor</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">POČET KNÍH</span>
+                            <span class="status-value">24 diel</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">HODNOTENIE</span>
+                            <span class="status-value">4.2 / 5</span>
+                        </div>
+                        <div class="status-item-right">
+                            <a href="https://blackholly.com" target="_blank" class="author-web-link">Oficiálny web</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Books Section -->
+            <section class="books-section">
+                <h2 class="section-title">Knihy od autora:</h2>
+                
+                <div class="product-grid">
+                    <!-- Book 1 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="https://mrtns.sk/tovar/_l/3130/l3130291.jpg?v=17732068252" alt="The Cruel Prince">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="detajl_knihy.html" class="name-of-the-book">The Cruel Prince</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">14,90 €</a>
+                        </div>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="#" alt="The Wicked King">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#" class="name-of-the-book">The Wicked King</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">15,90 €</a>
+                        </div>
+                    </div>
+
+                    <!-- Book 3 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="#" alt="The Queen of Nothing">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#" class="name-of-the-book">The Queen of Nothing</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">13,90 €</a>
+                        </div>
+                    </div>
+
+                    <!-- Book 4 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="#" alt="The Stolen Heir">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#" class="name-of-the-book">The Stolen Heir</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">16,90 €</a>
+                        </div>
+                    </div>
+
+                    <!-- Book 5 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="#" alt="The Prisoner's Throne">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#" class="name-of-the-book">The Prisoner's Throne</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">17,90 €</a>
+                        </div>
+                    </div>
+
+                    <!-- Book 6 -->
+                    <div class="product-card">
+                        <div class="book-cover-placeholder">
+                            <img src="#" alt="Book of Night">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#" class="name-of-the-book">Book of Night</a></h3>
+                            <p><a href="#" class="writer">Holly Black</a></p>
+                            <a href="#" class="button-placeholder">18,90 €</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Recommendations -->
+    <section class="recommendations">
+        <div class="container">
+            <h3>Tiež by sa vám mohlo páčiť:</h3>
+            <div class="rec-slider">
+                <button class="rec-arrow left"><i class="fas fa-arrow-left"></i></button>
+                <div class="rec-books">
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                    <div class="rec-book-placeholder"></div>
+                </div>
+                <button class="rec-arrow right"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+</body>
+</html>
