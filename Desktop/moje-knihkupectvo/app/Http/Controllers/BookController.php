@@ -71,38 +71,38 @@ class BookController extends Controller
         return view('hlavna_stranka', compact('books', 'genres', 'carouselBooks'));
     }
 
-        public function show($id)
-{
-    $book = Book::with('authorModel')->findOrFail($id);
-    
-    $seriesBooks = collect();
-    if (!empty($book->series)) {
-        $seriesBooks = Book::where('series', $book->series)
-            ->where('id', '!=', $book->id)
-            ->where('status', 'active')
-            ->orderBy('published_at', 'asc')
-            ->get();
+    public function show($id)
+    {
+        $book = Book::with('authorModel')->findOrFail($id);    //error ak kniha nie je najdena lebo neexistuje
+        
+        $seriesBooks = collect();       //zoradenie knih podla datumu vydania od najtarsej po najnovsiu
+        if (!empty($book->series)) {
+            $seriesBooks = Book::where('series', $book->series)
+                ->where('id', '!=', $book->id)
+                ->where('status', 'active')
+                ->orderBy('published_at', 'asc')
+                ->get();
+        }
+        
+        $relatedBooks = collect();      //ak nema seriu, vypise to knihy od autora mimo tej knihy
+        if ($seriesBooks->isEmpty()) {
+            $relatedBooks = Book::where('id', '!=', $book->id)
+                ->where(function($query) use ($book) {
+                    if ($book->author_id) {
+                        $query->where('author_id', $book->author_id);
+                    } else {
+                        $query->where('author', $book->author);
+                    }
+                })
+                ->where('status', 'active')
+                ->limit(8)      //8 knih od autora
+                ->get();
+        }
+        
+        $carouselBooks = Book::where('status', 'active')->inRandomOrder()->limit(12)->get();        //odporucane knihy
+        
+        return view('detajl_knihy', compact('book', 'seriesBooks', 'relatedBooks', 'carouselBooks'));
     }
-    
-    $relatedBooks = collect();
-    if ($seriesBooks->isEmpty()) {
-        $relatedBooks = Book::where('id', '!=', $book->id)
-            ->where(function($query) use ($book) {
-                if ($book->author_id) {
-                    $query->where('author_id', $book->author_id);
-                } else {
-                    $query->where('author', $book->author);
-                }
-            })
-            ->where('status', 'active')
-            ->limit(8)
-            ->get();
-    }
-    
-    $carouselBooks = Book::where('status', 'active')->inRandomOrder()->limit(12)->get();
-    
-    return view('detajl_knihy', compact('book', 'seriesBooks', 'relatedBooks', 'carouselBooks'));
-}
 
     public function adminIndex()
     {
@@ -115,7 +115,7 @@ class BookController extends Controller
         return view('admin_pridanie_knihy', ['genres' => $genres, 'all_genres' => $genres]);
     }
 
-        public function store(Request $request)
+    public function store(Request $request)
     {
         $data = $request->validate([
             'title' => 'required',

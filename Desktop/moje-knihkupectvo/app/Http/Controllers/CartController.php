@@ -95,7 +95,7 @@ class CartController extends Controller
     
     public function clear() {
         session()->forget('cart');
-        $this->syncSessionToDb(); // Vymažeme z DB
+        $this->syncSessionToDb(); 
         
         return back();
     }
@@ -108,7 +108,7 @@ class CartController extends Controller
         }
         
         session()->put('cart', $cart);
-        $this->syncSessionToDb(); // Uložíme do DB
+        $this->syncSessionToDb();
         
         return back();
     }
@@ -124,7 +124,7 @@ class CartController extends Controller
         }
         
         session()->put('cart', $cart);
-        $this->syncSessionToDb(); // Uložíme do DB
+        $this->syncSessionToDb(); 
         
         return back();
     }

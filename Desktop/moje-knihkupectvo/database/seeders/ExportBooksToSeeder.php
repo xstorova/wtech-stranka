@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\File;
 
 class ExportBooksToSeeder extends Command
 {
-    // Príkaz, ktorý budeš spúšťať v termináli
     protected $signature = 'db:export-books';
     protected $description = 'Exportuje aktuálne knihy z databázy do BookSeeder.php';
 
@@ -29,10 +28,8 @@ class ExportBooksToSeeder extends Command
             ];
         })->toArray();
 
-        // Vygenerovanie PHP kódu z poľa
         $dataString = var_export($books, true);
 
-        // Formátovanie: array() -> [], lepšie odsadenie
         $dataString = str_replace("array (", "[", $dataString);
         $dataString = str_replace("),", "],", $dataString);
         $dataString = preg_replace("/\s+=>\s+/", " => ", $dataString);

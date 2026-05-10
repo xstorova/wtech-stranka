@@ -204,11 +204,8 @@ main { padding: 0 10%; }
 }
 
 
-
-
-
 /*pink detajl knihy */
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; } /*toto je dobry napad vyskusat aj inde */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .breadcrumb { background: #f8f8f8; padding: 10px 0; color: #999; font-size: 0.9rem; }
 
 .detail-page { background: white; padding: 30px 0; min-height: auto; }
@@ -248,27 +245,9 @@ main { padding: 0 10%; }
 .add-to-cart-btn a {background-color: #333; color: #e6e6e6; padding: 15px 30px;  font-size: 1.1rem; cursor: pointer; transition: background 0.3s; margin-bottom: 30px;}
 .add-to-cart-btn:hover { background-color:#beb9ff }
 
-.book-description { 
-    margin-top: 20px; 
-    margin-bottom: 0; 
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.book-description h3 { 
-    font-weight: 400; 
-    color: #666; 
-    margin-bottom: 0; 
-    font-size: 1.4rem;
-    text-align: justify;
-}
-
-.book-description p { 
-    line-height: 1.8; 
-    color: #555; 
-    font-size: 1.05rem;
-    text-align: justify;
-}
+.book-description {  margin-top: 20px;  margin-bottom: 0;  max-width: 1000px; margin: 0 auto;}
+.book-description h3 { font-weight: 400; color: #666; margin-bottom: 0;  font-size: 1.4rem; text-align: justify;}
+.book-description p {  line-height: 1.8;  color: #555;  font-size: 1.05rem; text-align: justify;}
 
 .editions-section { background: #e6e6ff; padding: 40px 0; padding-top:20px; margin-top: 0px; }
 .editions-section h3 { font-weight: 400; color: #666; margin-bottom: 25px; }
@@ -280,16 +259,7 @@ main { padding: 0 10%; }
 .edition-cover img { width: 100%; height: 100%; object-fit: cover; }
 .edition-price.add-to-cart-btn { margin-top: 0; background: #333; color: white; padding: 8px; font-size: 0.85rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; width: 140px; height: 36px; flex-shrink: 0;  }
 .edition-price.add-to-cart-btn:hover { margin-top: auto; background: #beb9ff; }
-.edition-meta {
-    min-height: 55px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 8px;
-    flex-grow: 1;
-}
-
+.edition-meta { min-height: 55px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; margin-bottom: 8px; flex-grow: 1;}
 .edition-price.sold-out-tag { background: #999; font-size: 0.85rem; border-radius: 4px; color:#000000;
     display: flex; align-items: center; justify-content: center; gap: 8px; width: 120px; height: 32px; margin-top: auto; }
 .edition-card.sold-out .edition-cover { opacity: 0.6; }
@@ -305,83 +275,28 @@ main { padding: 0 10%; }
 .rec-books::-webkit-scrollbar { display: none; }
 .rec-book-placeholder:hover { transform: scale(1.03); }
 
-/* Žánre ako checkboxy – skrytý input, viditeľný label */
-.filter-chip input[type="checkbox"] {
-    display: none;
-}
+.filter-chip input[type="checkbox"] { display: none;}
+.filter-chip { display: inline-flex; align-items: center; gap: 5px; padding: 6px 15px; border: 1px solid #ddd; background: white; border-radius: 20px; cursor: pointer; font-size: 0.85rem; transition: all 0.3s; color: #555; text-decoration: none;}
+.filter-chip:hover { border-color: #a69aff; color: #a69aff; background: #f5f3ff; text-decoration: none;}
+.filter-chip.active { background: #c4b5fd; color: #333; border-color: #c4b5fd; text-decoration: none;}
+.filter-chip.active:hover { background: #b8a8f0; border-color: #b8a8f0;}
 
-.filter-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 15px;
-    border: 1px solid #ddd;
-    background: white;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: all 0.3s;
-    color: #555;
-    text-decoration: none;
-}
+.gallery-thumb { transition: transform 0.2s, border-color 0.2s;}
+.gallery-thumb:hover { transform: scale(1.1);}
+.gallery-thumb.active { border-color: #c4b5fd !important; box-shadow: 0 0 8px rgba(196, 181, 253, 0.4);}
 
-.filter-chip:hover {
-    border-color: #a69aff;
-    color: #a69aff;
-    background: #f5f3ff;
-    text-decoration: none;
-}
+#simpleLightbox { animation: fadeIn 0.3s ease;}
 
-.filter-chip.active {
-    background: #c4b5fd;
-    color: #333;
-    border-color: #c4b5fd;
-    text-decoration: none;
-}
-
-/* Ak je aktívny, hover efekt iný */
-.filter-chip.active:hover {
-    background: #b8a8f0;
-    border-color: #b8a8f0;
-}
-
-.gallery-thumb {
-    transition: transform 0.2s, border-color 0.2s;
-}
-
-.gallery-thumb:hover {
-    transform: scale(1.1);
-}
-
-.gallery-thumb.active {
-    border-color: #c4b5fd !important;
-    box-shadow: 0 0 8px rgba(196, 181, 253, 0.4);
-}
-
-#simpleLightbox {
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; }}
 
 /*purple Responsive */
 @media (max-width: 768px) {
 .book-layout { flex-direction: column; align-items: center; }
 .book-cover-large { flex: 0 0 auto; max-width: 250px; }
 .rating-summary { flex-direction: column; gap: 20px; }
-.editions-grid { gap: 20px; }
-}
-
-.detail-page .container {
-    max-width: 1200px;
-}
-
-.book-cover-large {
-    flex: 0 0 320px;
-}
+.editions-grid { gap: 20px; }}
+.detail-page .container { max-width: 1200px;}
+.book-cover-large { flex: 0 0 320px;}
 
 
 /*pink Reviews Section */
@@ -402,84 +317,20 @@ main { padding: 0 10%; }
 .review-stars { color: #c4b5fd; margin-bottom: 15px; font-size: 0.9rem; }
 .review-text { line-height: 1.6; color: #555; font-size: 0.95rem; }
 
-.book-detail-dark {
-    background-color: #474747;
-    border-radius: 15px;
-    padding: 40px;
-    color: white;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-.book-detail-dark .book-title-detail {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-}
-
-.book-detail-dark .book-author {
-    color: #ccc;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.book-detail-dark .rating-stars {
-    color: #c4b5fd;
-    margin-bottom: 25px;
-}
-
-.book-detail-dark .book-meta {
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.book-detail-dark .meta-label {
-    color: #aaa;
-    font-size: 0.75rem;
-}
-
-.book-detail-dark .meta-value {
-    color: #eee;
-    font-size: 0.95rem;
-}
-
-.book-detail-dark .buy-box {
-    background: #555;
-    border-radius: 10px;
-    padding: 25px;
-    max-width: 300px;
-}
-
-.book-detail-dark .current-price {
-    color: white;
-    font-size: 1.8rem;
-}
-
-.book-detail-dark .old-price {
-    color: #999;
-}
-
-.book-detail-dark .add-to-cart-btn {
-    background: #c4b5fd;
-    color: #333;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.book-detail-dark .add-to-cart-btn:hover {
-    background: #b8a8f0;
-}
-
-/* Obrázok v tmavom štvorci */
-.book-detail-dark .book-cover-large {
-    flex: 0 0 280px;
-}
-
-.book-detail-dark .book-cover-large img {
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+.book-detail-dark { background-color: #474747; border-radius: 15px; padding: 40px; color: white; margin-top: 30px; margin-bottom: 40px;}
+.book-detail-dark .book-title-detail { color: white; font-size: 2.5rem; margin-bottom: 5px;}
+.book-detail-dark .book-author { color: #ccc; font-size: 1.2rem; margin-bottom: 15px;}
+.book-detail-dark .rating-stars { color: #c4b5fd; margin-bottom: 25px;}
+.book-detail-dark .book-meta { gap: 25px; margin-bottom: 30px;}
+.book-detail-dark .meta-label { color: #aaa; font-size: 0.75rem;}
+.book-detail-dark .meta-value { color: #eee; font-size: 0.95rem;}
+.book-detail-dark .buy-box { background: #555; border-radius: 10px; padding: 25px; max-width: 300px;}
+.book-detail-dark .current-price { color: white; font-size: 1.8rem;}
+.book-detail-dark .old-price { color: #999;}
+.book-detail-dark .add-to-cart-btn { background: #c4b5fd; color: #333; border-radius: 8px; font-weight: bold; transition: background 0.3s;}
+.book-detail-dark .add-to-cart-btn:hover { background: #b8a8f0;}
+.book-detail-dark .book-cover-large { flex: 0 0 280px;}
+.book-detail-dark .book-cover-large img { border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);}
 
 
 
@@ -509,9 +360,6 @@ main { padding: 0 10%; }
 .register-link a:hover { text-decoration: underline; }
 
 footer { background: #e6e6ff; height: 80px; margin-top: 0; }
-
-
-
 
 
 
@@ -670,13 +518,11 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
 .btn-add-secondary { background: #666; color: white; }
 .btn-add-secondary:hover { background: #555; }
 
-/* Záložky */
 .admin-tabs { display: flex; gap: 0; margin-bottom: 25px; border-bottom: 2px solid #e6e6ff; }
 .admin-tab { padding: 12px 25px; text-decoration: none; font-size: 0.95rem; font-weight: 500; color: #666; border-bottom: 3px solid transparent; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
 .admin-tab:hover { color: #a69aff; }
 .admin-tab.active { color: #333; border-bottom-color: #c4b5fd; font-weight: 600; }
 
-/* ===== KNIHY ===== */
 .books-table { width: 100%; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 .books-table table { width: 100%; border-collapse: collapse; }
 .books-table th { background: #444; color: white; padding: 15px; text-align: left; font-weight: 500; }
@@ -686,7 +532,6 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
 .book-thumb { width: 50px; height: 75px; background: #eee; border-radius: 4px; overflow: hidden; }
 .book-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Mobile info - hidden by default on desktop */
 .mobile-book-info { display: none; }
 
 .price-original { text-decoration: line-through; color: #999; font-size: 0.9rem; }
@@ -702,7 +547,6 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
 .status-active { color: #7ed321; }
 .status-inactive { color: #999; }
 
-/* ===== AUTORI ===== */
 .authors-table { width: 100%; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 .authors-table table { width: 100%; border-collapse: collapse; }
 .authors-table th { background: #444; color: white; padding: 15px; text-align: left; font-weight: 500; }
@@ -713,10 +557,8 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
 .author-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .author-thumb-placeholder { width: 100%; height: 100%; background: #666; display: flex; align-items: center; justify-content: center; color: #999; }
 
-/* Mobile info - hidden by default on desktop */
 .mobile-author-info { display: none; }
 
-/* ===== MOBILNÉ KARTY - KNIHY ===== */
 @media (max-width: 768px) {
     .admin-header {
         flex-direction: column;
@@ -735,7 +577,6 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
     .admin-tabs { overflow-x: auto; }
     .admin-tab { padding: 10px 18px; font-size: 0.9rem; white-space: nowrap; }
 
-    /* Knihy - karty */
     .books-table { background: transparent; box-shadow: none; }
     .books-table table, .books-table thead, .books-table tbody, .books-table th, .books-table td, .books-table tr { display: block; }
     .books-table thead { display: none; }
@@ -822,7 +663,6 @@ footer { background: #e6e6ff; height: 80px; margin-top: 0; }
         font-size: 0.9rem;
     }
 
-    /* Autori - karty (5 stĺpcov: Fotka, Meno, Počet kníh, Status, Akcie) */
     .authors-table { background: transparent; box-shadow: none; }
     .authors-table table, .authors-table thead, .authors-table tbody, .authors-table th, .authors-table td, .authors-table tr { display: block; }
     .authors-table thead { display: none; }
@@ -1096,79 +936,24 @@ textarea { min-height: 120px; resize: vertical; font-family: inherit; }
     }
 }
 
-/* --- GLOBÁLNE STRÁNKOVANIE --- */
-.pagination-container {
-    width: 100%;
-    margin: 40px 0;
-    display: flex;
-    justify-content: center; 
-}
-
-.pagination-list {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    gap: 15px; 
-}
-
-.pagination-list li {
-    display: inline-block;
-}
-
+.pagination-container { width: 100%; margin: 40px 0; display: flex; justify-content: center; }
+.pagination-list { display: flex; flex-direction: row;  flex-wrap: nowrap; align-items: center; list-style: none; padding: 0; gap: 15px; }
+.pagination-list li { display: inline-block;}
 .pagination-list li a, 
-.pagination-list li span {
-    text-decoration: none;
-    color: #BDBDBD;
-    font-size: 18px;
-    display: block;
-    transition: color 0.3s;
-}
+.pagination-list li span { text-decoration: none; color: #BDBDBD; font-size: 18px; display: block; transition: color 0.3s;}
+.pagination-list li a:hover { color: #a69aff;}
+.pagination-list li.active span { color: #000000; font-weight: bold;}
+.pagination-list li.ellipsis span { color: #999; letter-spacing: 2px; cursor: default;}
 
-.pagination-list li a:hover {
-    color: #a69aff;
-}
-
-.pagination-list li.active span {
-    color: #000000;
-    font-weight: bold;
-}
-
-.pagination-list li.ellipsis span {
-    color: #999;
-    letter-spacing: 2px;
-    cursor: default;
-}
-
-h1, h2, h3, h4, h5, h6, p, a, span, label, input, textarea, select {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
+h1, h2, h3, h4, h5, h6, p, a, span, label, input, textarea, select { word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;}
 
 .form-group input,
 .form-group textarea,
-.form-group select {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
+.form-group select { width: 100%; max-width: 100%; box-sizing: border-box;}
 
-.admin-box {
-    background: #4a4a4a;
-    padding: 40px;
-    border-radius: 8px;
-    max-width: 100%;
-    overflow: hidden;
-}
+.admin-box { background: #4a4a4a; padding: 40px; border-radius: 8px; max-width: 100%; overflow: hidden;}
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px;}
 
 @media (max-width: 768px) {
     .form-row {
@@ -1176,38 +961,14 @@ h1, h2, h3, h4, h5, h6, p, a, span, label, input, textarea, select {
     }
 }
 
-.product-card {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    width: 100%;
-    min-width: 0; 
-    overflow: hidden;
-}
+.product-card { display: flex; justify-content: flex-start; gap: 20px; width: 100%; min-width: 0;  overflow: hidden;}
 
-.product-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-    flex: 1;
-}
+.product-info { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; flex: 1;}
 
 .product-info h3,
-.product-info p {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+.product-info p { max-width: 100%; overflow: hidden; text-overflow: ellipsis;}
 
-.product-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-left: auto;
-    flex-shrink: 0; 
-    flex-wrap: wrap; 
-}
+.product-right { display: flex; align-items: center; gap: 20px; margin-left: auto; flex-shrink: 0;  flex-wrap: wrap; }
 
 @media (max-width: 768px) {
     .product-card {
@@ -1222,195 +983,34 @@ h1, h2, h3, h4, h5, h6, p, a, span, label, input, textarea, select {
     }
 }
 
+.rec-books { flex: 1; display: flex; gap: 15px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 5px;}
+.rec-books::-webkit-scrollbar { display: none;}
+.rec-book-placeholder { flex: 0 0 120px; height: 180px; background: #f0f0f0; border: 1px solid #e0e0e0; border-radius: 4px;}
+.rec-book-placeholder:hover { transform: scale(1.03);}
+.rec-arrow { background: white; border: 1px solid #ddd; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: #666; transition: all 0.3s;}
+.rec-arrow:hover { background: #f5f5f5;}
 
+.cart-product-card { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #a49eff; width: 100%; gap: 20px;}
+.cart-product-left { display: flex; align-items: center; gap: 20px; flex: 1; min-width: 0;}
+.cart-product-left .book-cover { width: 80px; flex-shrink: 0;}
+.cart-product-left .book-cover img { width: 100%; display: block; border-radius: 4px;}
+.cart-product-left .book-info { display: flex; flex-direction: column; gap: 5px; min-width: 0;}
+.cart-product-left .book-title { color: black; text-decoration: none; font-size: 1.1rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.cart-product-left .book-title:hover { color: #a69aff;}
+.cart-product-left .book-author { color: #555; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.cart-product-right { display: flex; align-items: center; gap: 25px; flex-shrink: 0;}
+.cart-product-price { font-size: 1.2rem; font-weight: bold; white-space: nowrap; min-width: 80px; text-align: right;}
+.cart-quantity { display: flex; align-items: center; background: #cfcfcf; border-radius: 4px; overflow: hidden; height: 32px; flex-shrink: 0;}
+.cart-quantity .qty-btn { background: #878787; border: none; color: white; padding: 0 12px; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; height: 100%; transition: background 0.2s;}
+.cart-quantity .qty-btn:hover { background: #666;}
+.cart-quantity .qty-value { padding: 0 15px; font-size: 14px; min-width: 30px; text-align: center; color: #333; font-weight: 500;}
 
+.remove-item { background: none; border: none; color: #000000; font-size: 1.5rem; cursor: pointer; padding: 0 5px; line-height: 1; transition: transform 0.2s, color 0.2s; text-decoration: none;}
+.remove-item:hover { transform: scale(1.2); color: #a39bff;}
 
-
-.rec-books {
-    flex: 1;
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 5px;
-}
-.rec-books::-webkit-scrollbar {
-    display: none;
-}
-.rec-book-placeholder {
-    flex: 0 0 120px;
-    height: 180px;
-    background: #f0f0f0;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-}
-.rec-book-placeholder:hover {
-    transform: scale(1.03);
-}
-.rec-arrow {
-    background: white;
-    border: 1px solid #ddd;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    color: #666;
-    transition: all 0.3s;
-}
-.rec-arrow:hover {
-    background: #f5f5f5;
-}
-
-
-
-
-
-/* ============================================
-   KOŠÍK - RESPONZÍVNE ŠTÝLY
-   ============================================ */
-
-.cart-product-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-    border-bottom: 1px solid #a49eff;
-    width: 100%;
-    gap: 20px;
-}
-
-.cart-product-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 1;
-    min-width: 0;
-}
-
-.cart-product-left .book-cover {
-    width: 80px;
-    flex-shrink: 0;
-}
-
-.cart-product-left .book-cover img {
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-}
-
-.cart-product-left .book-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
-}
-
-.cart-product-left .book-title {
-    color: black;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.cart-product-left .book-title:hover {
-    color: #a69aff;
-}
-
-.cart-product-left .book-author {
-    color: #555;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.cart-product-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-shrink: 0;
-}
-
-.cart-product-price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    white-space: nowrap;
-    min-width: 80px;
-    text-align: right;
-}
-
-.cart-quantity {
-    display: flex;
-    align-items: center;
-    background: #cfcfcf;
-    border-radius: 4px;
-    overflow: hidden;
-    height: 32px;
-    flex-shrink: 0;
-}
-
-.cart-quantity .qty-btn {
-    background: #878787;
-    border: none;
-    color: white;
-    padding: 0 12px;
-    text-decoration: none;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    transition: background 0.2s;
-}
-
-.cart-quantity .qty-btn:hover {
-    background: #666;
-}
-
-.cart-quantity .qty-value {
-    padding: 0 15px;
-    font-size: 14px;
-    min-width: 30px;
-    text-align: center;
-    color: #333;
-    font-weight: 500;
-}
-
-.remove-item {
-    background: none;
-    border: none;
-    color: #000000;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0 5px;
-    line-height: 1;
-    transition: transform 0.2s, color 0.2s;
-    text-decoration: none;
-}
-
-.remove-item:hover {
-    transform: scale(1.2);
-    color: #a39bff;
-}
-
-.cart-empty {
-    text-align: center;
-    padding: 40px;
-}
-
-.cart-empty a {
-    color: #a69aff;
-    text-decoration: none;
-}
-
-.cart-empty a:hover {
-    text-decoration: underline;
-}
+.cart-empty { text-align: center; padding: 40px;}
+.cart-empty a { color: #a69aff; text-decoration: none;}
+.cart-empty a:hover { text-decoration: underline;}
 
 @media (max-width: 1024px) {
     .cart-product-card { gap: 15px; }

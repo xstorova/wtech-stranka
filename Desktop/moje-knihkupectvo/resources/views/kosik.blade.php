@@ -9,7 +9,7 @@
     @forelse($items as $item)
     <div class="cart-product-card">
 
-        {{-- VĽAVO: Kniha --}}
+        <!-- VĽAVO: Kniha -->
         <div class="cart-product-left">
             <div class="book-cover">
                 @if($item['book']->image)
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        {{-- VPRAVO: Cena + Množstevník + krížik --}}
+        <!-- VPRAVO: Cena + Množstevník + krížik -->
         <div class="cart-product-right">
             <div class="cart-product-price">{{ number_format($item['book']->final_price * $item['quantity'], 2) }}€</div>
             

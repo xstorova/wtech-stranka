@@ -235,7 +235,6 @@ function togglePwd(btn) {
     }
 }
 
-// ===== AVATAR PREVIEW + AUTO-SUBMIT =====
 document.addEventListener('DOMContentLoaded', function() {
     const avatarInput = document.getElementById('avatarInput');
     const avatarPreview = document.getElementById('avatarPreview');
@@ -245,14 +244,12 @@ document.addEventListener('DOMContentLoaded', function() {
         avatarInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
-                // Okamžitý preview bez reloadu
                 const reader = new FileReader();
                 reader.onload = function(event) {
                     avatarPreview.innerHTML = '<img src="' + event.target.result + '" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">';
                 };
                 reader.readAsDataURL(file);
                 
-                // Automatické odoslanie formulára po 300ms (aby sa stihol preview vykresliť)
                 setTimeout(() => {
                     avatarForm.submit();
                 }, 300);

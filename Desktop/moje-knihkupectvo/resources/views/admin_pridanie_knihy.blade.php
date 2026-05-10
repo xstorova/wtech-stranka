@@ -142,7 +142,7 @@
                 <textarea name="description" placeholder="Krátky popis knihy...">{{ old('description') }}</textarea>
             </div>
 
-            {{-- === OBÁLKA KNIHY === --}}
+            <!-- OBÁLKA KNIHY -->
             <div class="form-group" style="margin-top: 30px;">
                 <label style="display: block; margin-bottom: 8px; font-weight: bold;">Obálka knihy</label>
                 
@@ -160,13 +160,12 @@
                 <p class="hint">Vlož priamo URL adresu obrázka knihy</p>
             </div>
 
-            {{-- === GALÉRIA FOTIEK === --}}
+            <!-- GALÉRIA FOTIEK -->
             <div class="form-group" style="margin-top: 30px;">
                 <label style="display: block; margin-bottom: 8px; font-weight: bold; ">Galéria fotiek</label>
                 <input type="file" name="gallery[]" accept="image/*" multiple onchange="previewGallery(this)">
                 
                 <div id="galleryPreview" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-                    {{-- Tu sa zobrazia náhľady --}}
                 </div>
             </div>
 
@@ -215,7 +214,7 @@
         }
     }
 
-    // === OBÁLKA KNIHY ===
+    // OBÁLKA KNIHY 
     function previewMainImage(input) {
         const preview = document.getElementById('mainImagePreview');
         if (input.files && input.files[0]) {
@@ -235,7 +234,7 @@
         }
     }
 
-    // === GALÉRIA ===
+    // GALÉRIA 
     let galleryFiles = [];
 
     function previewGallery(input) {
@@ -270,7 +269,6 @@
         });
     }
 
-    // Event listenery
     priceInput.addEventListener('input', updatePrice);
     discountInput.addEventListener('input', updatePrice);
     pageCountInput.addEventListener('input', updateReadingTime);

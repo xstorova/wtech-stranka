@@ -13,19 +13,19 @@
                 @csrf
                 @method('PUT')
 
-                {{-- MENO --}}
+                <!-- MENO -->
                 <div class="form-group">
                     <label style="display: block; margin-bottom: 8px;">Meno autora <span class="required">*</span></label>
                     <input type="text" name="name" value="{{ old('name', $author->name) }}" required>
                 </div>
 
-                {{-- BIO --}}
+                <!-- BIO -->
                 <div class="form-group" style="margin-top: 20px;">
                     <label style="display: block; margin-bottom: 8px;">Biografia</label>
                     <textarea name="bio" placeholder="Krátka biografia autora..." style="min-height: 150px;">{{ old('bio', $author->bio) }}</textarea>
                 </div>
 
-                {{-- FOTO + PREVIEW --}}
+                <!-- FOTO + PREVIEW -->
                 <div class="form-group" style="margin-top: 20px;">
                     <label style="display: block; margin-bottom: 8px;">URL fotka autora</label>
                     <input type="text" name="photo" id="photoInput" value="{{ old('photo', $author->photo) }}" placeholder="https://..." oninput="updatePhotoPreview()">
@@ -43,19 +43,19 @@
                     </div>
                 </div>
 
-                {{-- WEB --}}
+                <!-- WEB -->
                 <div class="form-group" style="margin-top: 20px;">
                     <label style="display: block; margin-bottom: 8px;">Oficiálny web</label>
                     <input type="url" name="website" value="{{ old('website', $author->website) }}" placeholder="https://...">
                 </div>
 
-                {{-- HODNOTENIE --}}
+                <!-- HODNOTENIE -->
                 <div class="form-group" style="margin-top: 20px;">
                     <label style="display: block; margin-bottom: 8px;">Hodnotenie (0-5)</label>
                     <input type="number" step="0.1" min="0" max="5" name="rating" value="{{ old('rating', $author->rating) }}" placeholder="napr. 4.5" class="input-small">
                 </div>
 
-                {{-- AKTÍVNY --}}
+                <!-- AKTÍVNY -->
                 <div class="form-group" style="margin-top: 20px;">
                     <label style="display: block; margin-bottom: 8px;">Stav</label>
                     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 10px;">
@@ -66,14 +66,14 @@
                     </div>
                 </div>
 
-                {{-- TLAČIDLÁ --}}
+                <!-- TLAČIDLÁ -->
                 <div class="form-actions" style="margin-top: 30px;">
                     <button type="submit" class="btn-save">Uložiť zmeny</button>
                     <a href="{{ url('/admin/autori') }}" class="btn-cancel">Zrušiť</a>
                 </div>
             </form>
 
-            {{-- MAZANIE --}}
+            <!-- MAZANIE -->
             <form method="POST" action="{{ url('/admin/autori/' . $author->id) }}" style="margin-top: 20px;" onsubmit="return confirm('Naozaj chceš zmazať tohto autora?');">
                 @csrf
                 @method('DELETE')

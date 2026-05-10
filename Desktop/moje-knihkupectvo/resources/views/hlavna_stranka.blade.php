@@ -15,10 +15,8 @@
     <h2>Novinky</h2>
     
     <div style="position: relative; overflow: hidden; border-radius: 4px;">
-        <!-- SLIDES - sem si daj svoje obrázky -->
         <div id="slider" style="display: flex; transition: transform 0.4s ease; width: 100%;">
             <div class="slide" style="min-width: 100%; height: 350px; background: #eee; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
-                <!-- <img src="url_tvojho_obrazka.jpg" style="width:100%; height:100%; object-fit:cover;"> -->
                 
             </div>
             <div class="slide" style="min-width: 100%; height: 350px; background: #e6e6ff; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem;">
@@ -111,20 +109,20 @@
             </form>
         </div>
 
-        {{-- ŽÁNRE – checkboxy pre viacnásobný výber --}}
+        <!-- ŽÁNRE – checkboxy pre viacnásobný výber -->
         <div class="quick-filters">
             <span class="filter-label">Žánre:</span>
             
-            {{-- Zľavy ako samostatný filter --}}
+            <!-- Zľavy ako samostatný filter -->
             @if(request('zlava') == 'ano')
                 <a href="{{ url('/') }}?{{ http_build_query(request()->except('zlava')) }}#filters" class="filter-chip active">Zľavy ✕</a>
             @else
                 <a href="{{ url('/') }}?{{ http_build_query(request()->all() + ['zlava' => 'ano']) }}#filters" class="filter-chip">Zľavy</a>
             @endif
 
-            {{-- Formulár pre žánre --}}
+            <!-- Formulár pre žánre -->
             <form method="GET" action="{{ url('/') }}#filters" id="genre-form" style="display: contents;">
-                {{-- Zachovaj ostatné parametre --}}
+                <!-- Zachovaj ostatné parametre -->
                 @foreach(request()->except(['zaner','page']) as $key => $value)
                     @if($key != 'zaner' && !is_array($value))
                         <input type="hidden" name="{{ $key }}" value="{{ $value }}">
@@ -178,7 +176,6 @@
                 <div class="product-info">
                     <h3><a class="name-of-the-book" href="{{ url('/knihy/'.$book->id) }}">{{ $book->title }}</a></h3>
 
-                    {{-- OPRAVA: Klikateľný autor s linkom --}}
                     @if($book->authorModel)
                         <a href="{{ url('/autor/'.$book->authorModel->slug) }}" class="writer">{{ $book->author }}</a>
                     @else

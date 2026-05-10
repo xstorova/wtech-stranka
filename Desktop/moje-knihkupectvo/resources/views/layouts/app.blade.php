@@ -78,7 +78,7 @@
                         @endif
                     </a>
 
-                   <!-- Mini košík s všetkými detailmi -->
+                   <!-- Mini košík -->
                     <div class="cart-menu">
                         <div class="triangle"></div>
                         
@@ -159,7 +159,7 @@
                     <button type="submit" style="display: none;"></button>
                 </form>
                 
-                               <!-- KOMPLETNÝ MEGA MENU -->
+                    <!-- KOMPLETNÉ MENU -->
                     <div class="burger-wrapper">
                         <i class="fas fa-bars"></i>
                         <div class="mega-menu">

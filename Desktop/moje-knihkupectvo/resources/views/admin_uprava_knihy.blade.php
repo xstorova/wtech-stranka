@@ -166,7 +166,7 @@
                 <textarea name="description" placeholder="Krátky popis knihy...">{{ old('description', $book->description) }}</textarea>
             </div>
 
-            {{-- === OBÁLKA KNIHY === --}}
+            <!-- OBÁLKA KNIHY -->
             <div class="form-group" style="margin-top: 30px;">
                 <label style="display: block; margin-bottom: 8px; font-weight: bold; ">Obálka knihy</label>
                 
@@ -193,11 +193,11 @@
 
             <hr style="border-color: #444; margin: 30px 0;">
 
-            {{-- === GALÉRIA FOTIEK === --}}
+            <!-- GALÉRIA FOTIEK -->
             <div class="form-group">
                 <label style="display: block; margin-bottom: 8px; font-weight: bold; ">Galéria fotiek</label>
                 
-                {{-- Existujúce fotky z galérie --}}
+                <!-- Existujúce fotky z galérie -->
                 @if($book->gallery && count($book->gallery) > 0)
                 <div id="existingGallery" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
                     @foreach($book->gallery as $index => $photo)
@@ -210,12 +210,12 @@
                 </div>
                 @endif
                 
-                {{-- Pridať nové fotky --}}
+                <!-- Pridať nové fotky -->
                 <label style="display: block; margin-bottom: 8px;">Pridať nové fotky</label>
                 <input type="file" name="gallery_new[]" accept="image/*" multiple onchange="previewNewGallery(this)" style="padding: 10px; background: #333; border-radius: 4px;">
                 
                 <div id="galleryPreviewNew" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                    {{-- Náhľady nových fotiek --}}
+                    <!-- Náhľady nových fotiek -->
                 </div>
             </div>
 
@@ -271,7 +271,7 @@
         }
     }
 
-    // === OBÁLKA KNIHY ===
+    // OBÁLKA KNIHY
     function previewMainImage(input) {
         const preview = document.getElementById('mainImagePreview');
         if (input.files && input.files[0]) {
@@ -291,7 +291,7 @@
         }
     }
 
-    // === GALÉRIA - existujúce fotky ===
+    // GALÉRIA - existujúce fotky
     function markGalleryForRemoval(element) {
         const path = element.dataset.path;
         element.style.opacity = '0.3';
@@ -326,7 +326,7 @@
         btn.style.background = '#ff6b6b';
     }
 
-    // === GALÉRIA - nové fotky ===
+    // GALÉRIA - nové fotky
     function previewNewGallery(input) {
         const previewContainer = document.getElementById('galleryPreviewNew');
         
@@ -347,7 +347,6 @@
         }
     }
 
-    // Event listenery
     priceInput.addEventListener('input', updatePrice);
     discountInput.addEventListener('input', updatePrice);
     imageInput.addEventListener('input', updateMainImage);

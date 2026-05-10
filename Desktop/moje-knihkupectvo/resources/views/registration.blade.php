@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Klik na ikonu kalendára otvorí date picker
     const calendarBtn = document.querySelector('.calendar-btn');
     const birthdateInput = document.querySelector('#birthdate');
     

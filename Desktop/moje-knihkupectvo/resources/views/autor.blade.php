@@ -8,7 +8,7 @@
     <div class="author-profile-container">
         <div class="author-main-content">
 
-            {{-- Fotka autora --}}
+            <!-- Fotka autora -->
             <div class="author-book-style-photo">
                 @if($author->photo)
                     <img src="{{ $author->photo }}" alt="{{ $author->name }}">
@@ -19,7 +19,7 @@
                 @endif
             </div>
 
-            {{-- Info o autorovi --}}
+            <!-- Info o autorovi -->
             <div class="author-text-details">
                 <span class="author-label">AUTOR</span>
                 <h1 class="author-full-name">{{ $author->name }}</h1>
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        {{-- Status bar --}}
+        <!-- Status bar -->
         <div class="author-status-bar">
             <div class="status-item">
                 <span class="status-label">STAV</span>
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    {{-- Knihy autora --}}
+    <!-- Knihy autora -->
     @if($books->count() > 0)
     <section class="best-sellers">
         <h2>Knihy autora</h2>
@@ -123,7 +123,7 @@
         <p style="text-align:center;padding:40px;color:#666;">Tento autor zatiaľ nemá žiadne knihy.</p>
     @endif
 
-    {{-- Carousel odporúčaných kníh --}}
+    <!-- Carousel odporúčaných kníh -->
     @if(isset($carouselBooks) && $carouselBooks->count() > 0)
     <section class="recommendations">
         <div class="container">

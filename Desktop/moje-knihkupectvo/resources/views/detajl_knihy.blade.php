@@ -19,7 +19,7 @@
                 <!-- Book Cover + Galéria -->
                 <div class="book-cover-section" style="display: flex; flex-direction: column; gap: 15px; align-items: center; flex: 1 1 300px; max-width: 100%;">
                     
-                    {{-- HLAVNÝ OBRÁZOK – zmení sa po kliknutí na galériu --}}
+                    <!-- HLAVNÝ OBRÁZOK – zmení sa po kliknutí na galériu -->
                     <div class="book-cover-large" id="mainBookCover" style="cursor: pointer; transition: opacity 0.3s; width: 100%; display: flex; justify-content: center;">
                         @if($book->image)
                             <img src="{{ $book->image }}" alt="{{ $book->title }}" id="mainBookImage" style="max-height: 500px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 8px;">
@@ -30,11 +30,11 @@
                         @endif
                     </div>
                     
-                    {{-- GALÉRIA FOTIEK – klikateľné náhľady --}}
+                    <!-- GALÉRIA FOTIEK – klikateľné náhľady -->
                     @if($book->gallery && count($book->gallery) > 0)
                     <div class="book-gallery" style="width: 100%;">
                         <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                            {{-- Hlavný obrázok ako prvý náhľad --}}
+                            <!-- Hlavný obrázok ako prvý náhľad -->
                             @if($book->image)
                                 <button type="button" onclick="swapMainImage('{{ $book->image }}')" 
                                         class="gallery-thumb active" 
@@ -44,7 +44,7 @@
                                 </button>
                             @endif
                             
-                            {{-- Galéria fotiek --}}
+                            <!-- Galéria fotiek -->
                             @foreach($book->gallery as $photo)
                                 <button type="button" onclick="swapMainImage('{{ asset('storage/' . $photo) }}', this)" 
                                         class="gallery-thumb" 
@@ -188,7 +188,6 @@
             document.getElementById('add-to-cart-link').href = baseUrl + "?quantity=" + qty;
         }
 
-        // Inicializuj pri načítaní stránky
         updateCartLink();
     </script>
 
@@ -199,11 +198,11 @@
     </section>
 </main>
 
-<!-- Editions Section (Purple Background) -->
+<!-- Editions Section -->
 <section class="editions-section" style="margin-top: 20px; padding-top: 40px; padding-bottom: 40px;">
     <div class="container">
         
-        {{-- ===== KNihy z ROVNAKEJ SÉRIE ===== --}}
+        <!-- KNihy z ROVNAKEJ SÉRIE -->
 @if($seriesBooks->count() > 0)
     <h3 style="margin-bottom: 25px;">Knihy z série: <span style="color: #525252; ">{{ $book->series }}</span></h3>
     <div class="editions-grid">
@@ -240,7 +239,7 @@
     </div>
 @endif
 
-        {{-- ===== SÚVISIACE KNihy (fallback) ===== --}}
+        <!-- SÚVISIACE KNihy (fallback) -->
         @if($relatedBooks->count() > 0)
             <h3 style="margin-bottom: 25px; margin-top: 30px;">Súvisiace knihy:</h3>
             <div class="editions-grid">
@@ -276,7 +275,7 @@
             </div>
         @endif
 
-        {{-- ===== Ak niet ničoho ===== --}}
+        <!-- Ak nie je nič -->
         @if($seriesBooks->isEmpty() && $relatedBooks->isEmpty())
             <p style="color: #666; text-align: center; grid-column: 1 / -1;">Žiadne súvisiace knihy neboli nájdené.</p>
         @endif
@@ -285,7 +284,7 @@
     </div>
 </section>
 
-<!-- Recommendations - dynamický carousel náhodných kníh -->
+<!-- Odporúčané knihy -->
 @if(isset($carouselBooks) && $carouselBooks->count() > 0)
 <section class="recommendations" style="margin-top: 40px; padding-top: 20px; padding-bottom: 40px;">
     <div class="container">
@@ -355,12 +354,11 @@
 })();
 </script>
 <script>
-    // === VÝMENA HLAVNÉHO OBRÁZKA Z GALÉRIE ===
+    // VÝMENA HLAVNÉHO OBRÁZKA Z GALÉRIE
     function swapMainImage(imageSrc, thumbElement = null) {
         const mainImage = document.getElementById('mainBookImage');
         const mainCover = document.getElementById('mainBookCover');
         
-        // Efekt fade-out
         mainCover.style.opacity = '0.5';
         
         setTimeout(() => {
@@ -387,7 +385,7 @@
         }
     }
     
-    // Klik na hlavný obrázok otvorí lightbox (voliteľné)
+    // Klik na hlavný obrázok otvorí lightbox
     document.getElementById('mainBookCover')?.addEventListener('click', function() {
         const img = document.getElementById('mainBookImage').src;
         openLightbox(img);

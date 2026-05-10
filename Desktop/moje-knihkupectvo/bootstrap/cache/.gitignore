@@ -3,3 +3,6 @@
 .tmp/
 node_modules/
 *.log
+/vendor/
+/node_modules/
+.env

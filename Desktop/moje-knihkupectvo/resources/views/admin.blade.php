@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    {{-- ZÁLOŽKY --}}
+    <!-- ZÁLOŽKY -->
     <div class="admin-tabs">
         <a href="{{ url('/admin') }}" class="admin-tab {{ request()->is('admin') ? 'active' : '' }}">
             <i class="fas fa-book"></i> Knihy

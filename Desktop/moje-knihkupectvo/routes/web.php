@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/account/avatar', [AccountController::class, 'removeAvatar']);
 });
 
-// ========== ADMIN ROUTES ==========
+// ADMIN ROUTES 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     
     $adminCheck = function() {
@@ -47,7 +47,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         return null;
     };
 
-    // ========== KNIHY ==========
+    // KNIHY 
     Route::get('/', function() use ($adminCheck) {
         $redirect = $adminCheck();
         if ($redirect) return $redirect;
@@ -84,7 +84,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         return app()->make(BookController::class)->destroy($id);
     })->name('admin.knihy.destroy');
 
-    // ========== AUTORI ==========
+    // AUTORI 
     Route::get('/autori', function() use ($adminCheck) {
         $redirect = $adminCheck();
         if ($redirect) return $redirect;
