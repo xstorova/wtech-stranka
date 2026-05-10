@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Http\Controllers\CartController;
 
 class AuthController extends Controller {
     
@@ -17,8 +20,12 @@ class AuthController extends Controller {
             'password' => 'required'
         ]);
         
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
+            
+            // PRENOSITEĽNOSŤ KOŠÍKA: Pre prihláseného používateľa prenesieme session košík do DB
+            CartController::mergeSessionCartOnLogin();
+            
             return redirect()->intended('/');
         }
         
@@ -43,6 +50,10 @@ class AuthController extends Controller {
         ]);
         
         Auth::login($user);
+        
+        // PRENOSITEĽNOSŤ KOŠÍKA: Pre novo-registrovaného používateľa prenesieme session košík do DB
+        CartController::mergeSessionCartOnLogin();
+        
         return redirect('/');
     }
     
@@ -50,6 +61,10 @@ class AuthController extends Controller {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        
+        // Po odhlásení vymažeme session košík (prihlásený používateľ má košík v DB)
+        session()->forget('cart');
+        
         return redirect('/');
     }
 }

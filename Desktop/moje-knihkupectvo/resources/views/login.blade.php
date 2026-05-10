@@ -3,6 +3,25 @@
 @section('title', 'Prihlásenie')
 
 @section('content')
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.querySelector('.login-box .toggle-password');
+    const passwordInput = document.querySelector('.login-box #password');
+    
+    if (toggleBtn && passwordInput) {
+        toggleBtn.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    }
+});
+</script>
+
 <main class="login-page">
     <div class="login-container">
         <div class="login-box">

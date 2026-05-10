@@ -11,3 +11,6 @@ class AdminMiddleware {
         return $next($request);
     }
 }
+
+
+//kontrola ci je admin

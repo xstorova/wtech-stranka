@@ -21,3 +21,7 @@ return new class extends Migration {
         }
     }
 };
+
+
+
+//dodanie do databazy na ulozenie ako admin

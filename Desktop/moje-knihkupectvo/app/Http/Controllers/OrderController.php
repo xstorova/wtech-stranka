@@ -42,13 +42,22 @@ class OrderController extends Controller {
             return back()->with('error', 'Košík je prázdny');
         }
         
-        $total = 0;
+        $subtotal = 0;
         foreach ($cart as $id => $qty) {
             $book = Book::find($id);
-            if ($book) $total += $book->final_price * $qty;
+            if ($book) $subtotal += $book->final_price * $qty;
         }
         
-        $data['total'] = $total + 3.90; // + doprava
+        $shipping = match($request->shipping_method) {
+            'zasielkovna' => 2.50,
+            default => 3.90,
+        };
+        
+        if ($request->payment_method === 'dobierka') {
+            $shipping += 1.20;
+        }
+        
+        $data['total'] = $subtotal + $shipping;
         $data['user_id'] = auth()->id();
         $data['status'] = 'pending';
         

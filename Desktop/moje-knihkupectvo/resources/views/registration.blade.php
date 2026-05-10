@@ -3,6 +3,35 @@
 @section('title', 'Registrácia')
 
 @section('content')
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.querySelector('.register-box .toggle-password');
+    const passwordInput = document.querySelector('.register-box #password');
+    
+    if (toggleBtn && passwordInput) {
+        toggleBtn.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    }
+    
+    // Klik na ikonu kalendára otvorí date picker
+    const calendarBtn = document.querySelector('.calendar-btn');
+    const birthdateInput = document.querySelector('#birthdate');
+    
+    if (calendarBtn && birthdateInput) {
+        calendarBtn.addEventListener('click', function() {
+            birthdateInput.showPicker();
+        });
+    }
+});
+</script>
+
 <main class="register-page">
     <div class="register-container">
         <div class="register-box">
@@ -45,9 +74,9 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="datum1">DÁTUM NARODENIA</label>
+                    <label for="birthdate">DÁTUM NARODENIA</label>
                     <div class="date-input">
-                        <input type="text" id="datum1" name="birthdate" placeholder="dd. mm. rrrr">
+                        <input type="date" id="birthdate" name="birthdate" value="{{ old('birthdate') }}" placeholder="dd. mm. rrrr">
                         <button type="button" class="calendar-btn">
                             <i class="fas fa-calendar-alt"></i>
                         </button>
@@ -56,7 +85,7 @@
                 
                 <div class="form-group">
                     <label for="telefon">TELEFÓN</label>
-                    <input type="tel" id="telefon" name="phone">
+                    <input type="tel" id="telefon" name="phone" value="{{ old('phone') }}">
                 </div>
                 
                 <div class="checkbox-group">

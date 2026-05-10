@@ -7,8 +7,10 @@
     <div class="shoping-card">Košík:</div>
 
     @forelse($items as $item)
-    <div class="product-card">
-        <div class="product-left">
+    <div class="cart-product-card">
+
+        {{-- VĽAVO: Kniha --}}
+        <div class="cart-product-left">
             <div class="book-cover">
                 @if($item['book']->image)
                     <img src="{{ $item['book']->image }}" alt="{{ $item['book']->title }}">
@@ -19,20 +21,29 @@
                 <a class="book-author" href="#">{{ $item['book']->author }}</a>
             </div>
         </div>
-        <div class="product-right">
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <span>Počet: {{ $item['quantity'] }}</span>
-                <div class="product-price">{{ number_format($item['book']->final_price * $item['quantity'], 2) }}€</div>
-                <a href="{{ url('/kosik/remove/'.$item['book']->id) }}" class="remove-item">&times;</a>
+
+        {{-- VPRAVO: Cena + Množstevník + krížik --}}
+        <div class="cart-product-right">
+            <div class="cart-product-price">{{ number_format($item['book']->final_price * $item['quantity'], 2) }}€</div>
+            
+            <div class="cart-quantity">
+                <a href="{{ url('/kosik/znizit/'.$item['book']->id) }}" class="qty-btn">-</a>
+                <span class="qty-value">{{ $item['quantity'] }}</span>
+                <a href="{{ url('/kosik/zvysit/'.$item['book']->id) }}" class="qty-btn">+</a>
             </div>
+            
+            <a href="{{ url('/kosik/remove/'.$item['book']->id) }}" class="remove-item">&times;</a>
         </div>
+
     </div>
     @empty
-    <p style="text-align: center; padding: 40px;">Košík je prázdny. <a href="{{ url('/') }}" style="color: #a69aff;">Prejsť na nákup</a></p>
+    <div class="cart-empty">
+        <p>Košík je prázdny. <a href="{{ url('/') }}">Prejsť na nákup</a></p>
+    </div>
     @endforelse
 
     @if(count($items) > 0)
-    <div class="total-section">Total: {{ number_format($total, 2) }}€</div>
+    <div class="total-section">Celková suma: {{ number_format($total, 2) }}€</div>
 
     <div class="checkout-container">
         <a href="{{ url('/objednavka') }}" class="checkout-button">Pokračovať k objednávke</a>
